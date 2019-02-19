@@ -1,0 +1,99 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+
+
+{% block content %}
+
+
+<!-- {{wtf.quick_form(registration_form)}} -->
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #344152;
+   color: white;
+   text-align: center;
+}
+a{
+color:white;
+padding-bottom:10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+span{
+  color:green;
+  font-family: 'Coiny', cursive;
+}
+
+#one{
+  margin-left:90px;
+  font-size:25px;
+}
+
+#two{
+  margin-left:690px;
+  padding-top:7px;
+}
+</style>
+
+<blockquote style=" border-left: 4px solid #c76c0c; border-right: 2px solid #c76c0c; -moz-box-shadow: 2px 2px 15px #ccc; -webkit-box-shadow: 2px 2px 15px #ccc;  box-shadow: 2px 2px 15px #ccc;">
+  <ul>
+  <li id="one"><a class="active" href="#home"><span>Online</span>Vote!</a></li>
+  <li id="two"><a href="#news">Already have an account? login</a></li>
+</ul>
+</blockquote>
+
+<center style="margin-top:70px; border-style: solid; width:550px; margin-left:29%; ">
+
+<form method="POST">
+
+  {{ registration_form.hidden_tag() }}
+  <p>email</p>
+  {{registration_form.email}}
+  <p>username</p>
+  {{registration_form.username}}
+  <p>password</p>
+  {{registration_form.password}}
+  <p>confirm password</p>
+  {{registration_form.password_confirm}}
+  <br><br>
+  {{registration_form.submit}}
+
+
+</form>
+
+
+
+</center>
+
+<div class="footer">
+  <p>@2018 - 2019 Project Ip</p>
+  <a href='#'>Terms of service</a>
+  <br>
+  <a href='#'>Privacy policy</a>
+</div>
+
+
+{% endblock%}

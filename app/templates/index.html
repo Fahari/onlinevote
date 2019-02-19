@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>welcome</title>
+  </head>
+  <body>
+    <h1>welcome</h1>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+
+              {% if current_user.is_authenticated %}
+
+            <ul style="list-style-type: none;">
+
+              <li style=" color:black; float:right;margin-left:9px;"><a style="text-decoration: none;"href="{{url_for('auth.logout')}}">Sign out</a></li>
+
+
+              <li style="color:black; float:right;">{{current_user.username}}</li>
+
+              {% else %}
+              <li style="float:right;color:black;"><a style="text-decoration: none;"href="{{url_for('auth.login')}}">Sign in</a></li>
+
+              {%endif%}
+            </ul>
+
+    </div>
+
+
+
+
+  </body>
+</html>
